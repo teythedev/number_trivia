@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:number_trivia/core/error/exception.dart';
@@ -7,9 +6,7 @@ import 'package:number_trivia/features/number_trivia/data/models/number_trivia_m
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mockito/annotations.dart';
 import 'package:number_trivia/features/number_trivia/data/datasources/number_trivia_local_data_source.dart';
-
 import '../../../../fixtures/fixture_reader.dart';
-import '../repositories/number_trivia_repository_impl_test.mocks.dart';
 import 'number_trivia_local_data_source_test.mocks.dart';
 
 @GenerateNiceMocks([MockSpec<SharedPreferences>()])

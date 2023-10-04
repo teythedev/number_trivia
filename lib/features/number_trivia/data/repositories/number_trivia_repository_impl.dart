@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:number_trivia/core/error/exception.dart';
-import 'package:number_trivia/features/number_trivia/data/models/number_trivia_model.dart';
+import '../../../../core/error/exception.dart';
+import '../models/number_trivia_model.dart';
 import '../../../../core/error/failure.dart';
 import '../../../../core/network/network_info.dart';
 import '../datasources/number_trivia_local_data_source.dart';
