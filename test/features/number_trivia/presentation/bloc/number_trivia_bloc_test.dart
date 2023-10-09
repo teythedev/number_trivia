@@ -75,7 +75,7 @@ void main() {
       );
       test(
         'should emit [Error] when the input is invalid',
-        () async {
+        () async* {
           // arrange
           when(mockInputConverter.stringToUnsignedInteger(any)).thenReturn(
             Left(
@@ -91,7 +91,7 @@ void main() {
             ),
           ];
           expectLater(
-            bloc.state,
+            bloc.stream,
             emitsInOrder(
               expected,
             ),

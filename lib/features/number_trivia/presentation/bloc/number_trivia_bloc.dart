@@ -28,26 +28,20 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
         super(
           NumberTriviaInitial(),
         ) {
-    on<GetTriviaForConcreteNumber>((event, emit) async {
-      final inputEither =
-          inputConverter.stringToUnsignedInteger(event.numberString);
-
-      inputEither.fold(
-        (failure) {
-          return emit(
-            const Error(
-              message: INVALID_INPUT_FAILURE_MESSAGE,
-            ),
-          );
-        },
-        (success) {
-          return emit(
-            const Loaded(
-              numberTrivia: NumberTrivia(number: 1, text: 'text'),
-            ),
-          );
-        },
-      );
-    });
+    on<GetTriviaForConcreteNumber>(
+      ((event, emit) {
+        final inputEither =
+            inputConverter.stringToUnsignedInteger(event.numberString);
+        return inputEither.fold(
+            (l) => emit(
+                  const Error(
+                    message: INVALID_INPUT_FAILURE_MESSAGE,
+                  ),
+                ),
+            (r) => const Loaded(
+                  numberTrivia: NumberTrivia(number: 1, text: 'text'),
+                ));
+      }),
+    );
   }
 }
